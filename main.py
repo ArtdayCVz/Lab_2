@@ -1,16 +1,6 @@
 import math
 import unittest
 
-"""!
-@file main.py
-@brief Implementation of a Statistics class with full Doxygen-style documentation.
-
-@details
-This file contains the implementation of the `Statistics` class together with
-a complete suite of unit tests. All classes and methods are documented using
-Doxygen comments.
-"""
-
 
 class Statistics:
     """!
@@ -21,10 +11,10 @@ class Statistics:
     (variance, standard deviation). It validates the input data before applying
     mathematical operations.
 
-    Example usage:
+    @par Example usage:
     @code
         stats = Statistics([1, 2, 3])
-        print(stats.mean());
+        print(stats.mean())
     @endcode
     """
 
@@ -71,8 +61,13 @@ class Statistics:
         result by the number of elements in the dataset.
 
         @return The arithmetic mean (float).
-        @example
-            Statistics([1,2,3]).mean() -> 2.0
+        
+        @par Example:
+        @code
+            stats = Statistics([1, 2, 3])
+            result = stats.mean() 
+            # result is 2.0
+        @endcode
         """
         return sum(self.data) / len(self.data)
 
@@ -84,6 +79,17 @@ class Statistics:
         If the number is even, the median is the average of the two central numbers.
 
         @return The median value.
+        
+        @par Example:
+        @code
+            # Odd number of elements
+            Statistics([1, 3, 5]).median() 
+            # Returns 3
+
+            # Even number of elements
+            Statistics([1, 3, 5, 7]).median() 
+            # Returns 4.0
+        @endcode
         """
         sorted_data = sorted(self.data)
         n = len(sorted_data)
@@ -103,6 +109,18 @@ class Statistics:
         - If all values appear only once, the method returns None.
 
         @return int | float | list | None The mode or list of modes.
+        
+        @par Example:
+        @code
+            # Single mode
+            Statistics([1, 2, 2, 3]).mode() # Returns 2
+            
+            # Multiple modes
+            Statistics([1, 1, 2, 2]).mode() # Returns [1, 2]
+            
+            # No mode (all unique)
+            Statistics([1, 2, 3]).mode()    # Returns None
+        @endcode
         """
         freq = {}
         for x in self.data:
@@ -125,6 +143,17 @@ class Statistics:
         @throws ValueError If sample variance is requested for a dataset with fewer than 2 elements.
 
         @note Variance measures the average squared deviation from the mean.
+        
+        @par Example:
+        @code
+            stats = Statistics([2, 4, 4, 4, 5, 5, 7, 9])
+            
+            # Sample variance (default)
+            stats.variance()             # Returns 4.571...
+            
+            # Population variance
+            stats.variance(sample=False) # Returns 4.0
+        @endcode
         """
         n = len(self.data)
         if n < 2 and sample:
@@ -142,6 +171,12 @@ class Statistics:
 
         @param sample Boolean specifying sample or population variant.
         @return The standard deviation (float).
+        
+        @par Example:
+        @code
+            stats = Statistics([2, 4, 4, 4, 5, 5, 7, 9])
+            stats.std_deviation() # Returns 2.138...
+        @endcode
         """
         return math.sqrt(self.variance(sample))
 
@@ -150,8 +185,20 @@ class Statistics:
         @brief Produces a summary of statistical metrics.
 
         @return A dictionary with keys: mean, median, mode, variance, std_dev.
-        @example
-            Statistics([1,2,2,3]).summary()
+        
+        @par Example:
+        @code
+            stats = Statistics([1, 2, 2, 3])
+            stats.summary()
+            # Returns:
+            # {
+            #     'mean': 2.0, 
+            #     'median': 2, 
+            #     'mode': 2, 
+            #     'variance': 0.667, 
+            #     'std_dev': 0.816
+            # }
+        @endcode
         """
         return {
             "mean": round(self.mean(), 3),
