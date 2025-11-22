@@ -1,40 +1,58 @@
 import math
 import unittest
 
+"""!
+@file main.py
+@brief Implementation of a Statistics class with full Doxygen-style documentation.
+
+@details
+This file contains the implementation of the `Statistics` class together with
+a complete suite of unit tests. All classes and methods are documented using
+Doxygen comments.
+"""
+
+
 class Statistics:
     """!
     @brief A class for performing descriptive statistics on numerical datasets.
-    
-    @details This class provides methods to calculate central tendency (mean, median, mode)
-    and measures of variability (variance, standard deviation). It handles validation
-    of input data to ensure statistical operations are performed on valid numerical lists.
 
-    @author Your Name
-    @date 2025
+    @details This class provides methods to compute measures of central tendency
+    (mean, median, mode) and measures of statistical variability
+    (variance, standard deviation). It validates the input data before applying
+    mathematical operations.
+
+    Example usage:
+    @code
+        stats = Statistics([1, 2, 3])
+        print(stats.mean());
+    @endcode
     """
 
     def __init__(self, data):
         """!
-        @brief Initializes the Statistics instance.
-        
-        @param data (list[int | float]) A list of numerical data to be analyzed.
-        
-        @raise TypeError If the input is not a list or contains non-numeric elements.
-        @raise ValueError If the input list is empty.
+        @brief Constructor for the Statistics class.
+
+        @param data A list of integer or floating-point numbers.
+        @return None
+        @throws TypeError If data is not a list or contains invalid elements.
+        @throws ValueError If the list is empty.
+
+        @note Validation is automatically performed via the private method `_validate_data()`.
         """
         self.data = self._validate_data(data)
 
     def _validate_data(self, data):
         """!
-        @brief Validates the input data.
-        
-        @details Checks if the input is a non-empty list containing only integers or floats.
-        
-        @param data The raw input data to validate.
-        @return (list) The validated list of numbers.
-        
-        @raise TypeError If 'data' is not a list or contains non-numeric types.
-        @raise ValueError If 'data' is an empty list.
+        @brief Validates the raw input data.
+
+        @details This method ensures the provided dataset is suitable for all statistical
+        operations performed by the class. It checks for correct type, non-emptiness,
+        and ensures that all elements are numeric.
+
+        @param data The input dataset to validate.
+        @return A validated list of numbers.
+        @throws TypeError If data is not a list or contains non-numeric elements.
+        @throws ValueError If data is an empty list.
         """
         if not isinstance(data, list):
             raise TypeError("Data must be a list.")
@@ -47,36 +65,25 @@ class Statistics:
 
     def mean(self):
         """!
-        @brief Calculates the arithmetic mean (average).
-        
-        @details The mean is the sum of all values divided by the count of values.
-        
-        @return (float) The arithmetic mean of the dataset.
+        @brief Computes the arithmetic mean.
 
-        @code
-        stats = Statistics([1, 2, 3])
-        print(stats.mean()) # Output: 2.0
-        @endcode
+        @details The mean is determined by summing all values and dividing the
+        result by the number of elements in the dataset.
+
+        @return The arithmetic mean (float).
+        @example
+            Statistics([1,2,3]).mean() -> 2.0
         """
         return sum(self.data) / len(self.data)
 
     def median(self):
         """!
-        @brief Calculates the median (middle value) of the dataset.
-        
-        @details 
-        - If the dataset length is **odd**, returns the middle element.
-        - If the dataset length is **even**, returns the average of the two middle elements.
-        
-        @return (int | float) The median value.
-        
-        @code
-        stats = Statistics([1, 3, 5])
-        print(stats.median()) # Output: 3
-        
-        stats = Statistics([1, 2, 3, 4])
-        print(stats.median()) # Output: 2.5
-        @endcode
+        @brief Computes the median of the dataset.
+
+        @details If the number of elements is odd, the middle number is returned.
+        If the number is even, the median is the average of the two central numbers.
+
+        @return The median value.
         """
         sorted_data = sorted(self.data)
         n = len(sorted_data)
@@ -88,22 +95,14 @@ class Statistics:
 
     def mode(self):
         """!
-        @brief Calculates the mode (the most frequent value).
-        
-        @details This method handles three scenarios:
-        1. **Unimodal**: One clear most frequent value. Returns that value.
-        2. **Multimodal**: Multiple values share the highest frequency. Returns a list of these values.
-        3. **No Mode**: All values are unique. Returns None.
-        
-        @return (int | float | list | None) The mode value(s) or None.
-        
-        @code
-        stats = Statistics([1, 2, 2, 3])
-        print(stats.mode()) # Output: 2
-        
-        stats = Statistics([1, 1, 2, 2])
-        print(stats.mode()) # Output: [1, 2]
-        @endcode
+        @brief Computes the statistical mode.
+
+        @details The mode is the most frequently occurring value in the dataset.
+        - If a single value is most frequent, that value is returned.
+        - If multiple values share the same highest frequency, a list is returned.
+        - If all values appear only once, the method returns None.
+
+        @return int | float | list | None The mode or list of modes.
         """
         freq = {}
         for x in self.data:
@@ -114,21 +113,18 @@ class Statistics:
             return modes[0]
         if len(modes) == len(freq):
             return None
-        return modes[0] if len(modes) == 1 else modes
+        return modes
 
     def variance(self, sample=True):
         """!
-        @brief Calculates the variance (measure of dispersion).
-        
-        @param sample (bool) Determines the calculation method:
-            - `True` (default): Calculates **Sample Variance** (denominator = N - 1).
-            - `False`: Calculates **Population Variance** (denominator = N).
-            
-        @return (float) The calculated variance.
-        
-        @raise ValueError If `sample=True` and the dataset has fewer than 2 elements.
-        
-        @note Sample variance is generally used when data represents a subset of a larger population.
+        @brief Computes the statistical variance.
+
+        @param sample If True, computes **sample variance** (divisor N-1).
+                      If False, computes **population variance** (divisor N).
+        @return The variance (float).
+        @throws ValueError If sample variance is requested for a dataset with fewer than 2 elements.
+
+        @note Variance measures the average squared deviation from the mean.
         """
         n = len(self.data)
         if n < 2 and sample:
@@ -140,26 +136,22 @@ class Statistics:
 
     def std_deviation(self, sample=True):
         """!
-        @brief Calculates the standard deviation.
-        
-        @details The standard deviation is the square root of the variance.
-        It represents the average distance of each data point from the mean.
-        
-        @param sample (bool) `True` for sample standard deviation, `False` for population.
-        @return (float) The standard deviation.
+        @brief Computes the standard deviation of the dataset.
+
+        @details Standard deviation is the square root of variance.
+
+        @param sample Boolean specifying sample or population variant.
+        @return The standard deviation (float).
         """
         return math.sqrt(self.variance(sample))
 
     def summary(self):
         """!
-        @brief Generates a summary dictionary of all statistical metrics.
-        
-        @return (dict) A dictionary containing:
-            - `mean`: Arithmetic mean.
-            - `median`: Median value.
-            - `mode`: Mode value(s).
-            - `variance`: Sample variance (rounded to 3 decimals).
-            - `std_dev`: Sample standard deviation (rounded to 3 decimals).
+        @brief Produces a summary of statistical metrics.
+
+        @return A dictionary with keys: mean, median, mode, variance, std_dev.
+        @example
+            Statistics([1,2,2,3]).summary()
         """
         return {
             "mean": round(self.mean(), 3),
@@ -171,8 +163,8 @@ class Statistics:
 
 class TestMean(unittest.TestCase):
     """!
-    @brief Unit tests for the mean() method.
-    @details Verifies mean calculation for positive, negative, mixed signs, and floating-point numbers.
+    @brief Tests for mean() method.
+    @details Covers several datasets: basic, negative, mixed values, floating point.
     """
 
     def setUp(self):
@@ -196,8 +188,8 @@ class TestMean(unittest.TestCase):
 
 class TestMedian(unittest.TestCase):
     """!
-    @brief Unit tests for the median() method.
-    @details Covers odd/even length datasets, unsorted input, negative values, and floats.
+    @brief Tests for median() method.
+    @details Includes tests for sorted, unsorted, odd, even, negative and float datasets.
     """
 
     def setUp(self):
@@ -225,8 +217,8 @@ class TestMedian(unittest.TestCase):
 
 class TestMode(unittest.TestCase):
     """!
-    @brief Unit tests for the mode() method.
-    @details Verifies logic for unimodal, multimodal, and unique-value datasets.
+    @brief Tests for mode() method.
+    @details Verifies unimodal, multimodal, unique, and repeated-value datasets.
     """
 
     def setUp(self):
@@ -262,8 +254,8 @@ class TestMode(unittest.TestCase):
 
 class TestVarianceAndStdDev(unittest.TestCase):
     """!
-    @brief Unit tests for variance() and std_deviation() methods.
-    @details Checks calculations for both sample and population stats using various datasets.
+    @brief Tests for variance() and std_deviation().
+    @details Covers sample vs. population, integer, float, large and small numbers.
     """
 
     def assertVarianceAndStd(self, data, sample_var, pop_var, delta=1e-4):
@@ -271,16 +263,17 @@ class TestVarianceAndStdDev(unittest.TestCase):
 
         self.assertAlmostEqual(stats.variance(sample=True), sample_var, delta=delta)
         self.assertAlmostEqual(stats.variance(sample=False), pop_var, delta=delta)
+        self.assertAlmostEqual(stats.std_deviation(sample=True),
+                               math.sqrt(sample_var), delta=delta)
+        self.assertAlmostEqual(stats.std_deviation(sample=False),
+                               math.sqrt(pop_var), delta=delta)
 
-        self.assertAlmostEqual(stats.std_deviation(sample=True), math.sqrt(sample_var), delta=delta)
-        self.assertAlmostEqual(stats.std_deviation(sample=False), math.sqrt(pop_var), delta=delta)
-    
     def test_basic(self):
         self.assertVarianceAndStd([1, 2, 3, 4, 5], 2.5, 2)
 
     def test_same_numbers(self):
         self.assertVarianceAndStd([5, 5, 5, 5], 0, 0)
-    
+
     def test_negative_numbers(self):
         self.assertVarianceAndStd([-2, -4, -4, -6], 2.6666666, 2)
 
@@ -289,13 +282,13 @@ class TestVarianceAndStdDev(unittest.TestCase):
 
     def test_dataset(self):
         self.assertVarianceAndStd(list(range(100)), 841.6666667, 833.25)
-    
+
     def test_with_large_numbers(self):
         self.assertVarianceAndStd([1e10, 1e10 + 1, 1e10 + 2], 1, 2/3)
-    
+
     def test_with_small_numbers(self):
-        self.assertVarianceAndStd([1e-10, 1e-10 - 1, 1e-10 -2], 1, 2/3)
-    
+        self.assertVarianceAndStd([1e-10, 1e-10 - 1, 1e-10 - 2], 1, 2/3)
+
     def test_single_element_population(self):
         stats = Statistics([42])
         self.assertEqual(stats.variance(sample=False), 0)
@@ -305,7 +298,8 @@ class TestVarianceAndStdDev(unittest.TestCase):
         with self.assertRaises(ValueError):
             Statistics([42]).variance(sample=True)
             Statistics([42]).std_deviation(sample=True)
-    
+
+
 class TestValidationAndErrors(unittest.TestCase):
     """!
     @brief Unit tests for error handling and data validation.
@@ -322,7 +316,7 @@ class TestValidationAndErrors(unittest.TestCase):
     def test_non_list_input(self):
         with self.assertRaises(TypeError):
             Statistics("12345")
-    
+
     def test_none_input(self):
         with self.assertRaises(TypeError):
             Statistics(None)
@@ -330,7 +324,8 @@ class TestValidationAndErrors(unittest.TestCase):
     def test_nested_list_input(self):
         with self.assertRaises(TypeError):
             Statistics([[1, 2], [3, 4]])
-    
+
+
 class TestIntegrationStatistics(unittest.TestCase):
     """!
     @brief Integration tests for the Statistics class.
