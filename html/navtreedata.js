@@ -25,7 +25,11 @@
 var NAVTREE =
 [
   [ "Lab_2", "index.html", [
-    [ "Lab_2", "md__r_e_a_d_m_e.html", null ],
+    [ "LAB2", "md__r_e_a_d_m_e.html", [
+      [ "Features", "md__r_e_a_d_m_e.html#autotoc_md1", null ],
+      [ "Documentation", "md__r_e_a_d_m_e.html#autotoc_md2", null ],
+      [ "Prerequisites", "md__r_e_a_d_m_e.html#autotoc_md3", null ]
+    ] ],
     [ "Packages", "namespaces.html", [
       [ "Package List", "namespaces.html", "namespaces_dup" ],
       [ "Package Members", "namespacemembers.html", [
