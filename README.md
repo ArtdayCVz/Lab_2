@@ -2,7 +2,7 @@
 
 This project implements a Python class, `Statistics`, designed to perform descriptive statistical analysis on numerical datasets. It includes methods for calculating measures of central tendency and statistical variability, fully covered by unit tests.
 
-This repository is part of **Laboratory Work #2**, focusing on code documentation, CI/CD pipelines, and automatic documentation publication.
+This repository is part of **Lab2**, focusing on code documentation, CI/CD pipelines, and automatic documentation publication.
 
 ## Features
 
