@@ -1,0 +1,47 @@
+\chapter{LAB2 }
+\hypertarget{md__r_e_a_d_m_e}{}\label{md__r_e_a_d_m_e}\index{LAB2@{LAB2}}
+,
+
+\label{md__r_e_a_d_m_e_autotoc_md0}%
+\Hypertarget{md__r_e_a_d_m_e_autotoc_md0}%
+
+
+This project implements a Python class, {\ttfamily Statistics}, designed to perform descriptive statistical analysis on numerical datasets. It includes methods for calculating measures of central tendency and statistical variability, fully covered by unit tests.
+
+This repository is part of {\bfseries{Laboratory Work \#2}}, focusing on code documentation, CI/\+CD pipelines, and automatic documentation publication.\hypertarget{md__r_e_a_d_m_e_autotoc_md1}{}\doxysection{\texorpdfstring{Features}{Features}}\label{md__r_e_a_d_m_e_autotoc_md1}
+The {\ttfamily Statistics} class supports the following operations\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries{Central Tendency\+:}}
+\begin{DoxyItemize}
+\item {\ttfamily mean()}\+: Arithmetic mean.
+\item {\ttfamily median()}\+: Middle value (handles both odd and even dataset sizes).
+\item {\ttfamily mode()}\+: Most frequent value(s). Handles unimodal, multimodal, and no-\/mode scenarios.
+\end{DoxyItemize}
+\item {\bfseries{Variability\+:}}
+\begin{DoxyItemize}
+\item {\ttfamily variance(sample=True/\+False)}\+: Calculates sample or population variance.
+\item {\ttfamily std\+\_\+deviation(sample=True/\+False)}\+: Calculates standard deviation.
+\end{DoxyItemize}
+\item {\bfseries{Utilities\+:}}
+\begin{DoxyItemize}
+\item {\ttfamily summary()}\+: Returns a dictionary containing all the above metrics.
+\item {\bfseries{Validation}}\+: Ensures input data is a non-\/empty list of numeric values.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md2}{}\doxysection{\texorpdfstring{Documentation}{Documentation}}\label{md__r_e_a_d_m_e_autotoc_md2}
+{\bfseries{Format}}\+: The source code is documented using Doxygen style comments (using
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+return tags).
+
+{\bfseries{Generation}}\+: HTML documentation is generated automatically using a CI/\+CD pipeline.
+
+{\bfseries{Hosting}}\+: The documentation is deployed to Git\+Hub Pages.\hypertarget{md__r_e_a_d_m_e_autotoc_md3}{}\doxysection{\texorpdfstring{Prerequisites}{Prerequisites}}\label{md__r_e_a_d_m_e_autotoc_md3}
+
+\begin{DoxyItemize}
+\item Python 3.\+x
+\item Standard libraries\+: {\ttfamily math}, {\ttfamily unittest} 
+\end{DoxyItemize}

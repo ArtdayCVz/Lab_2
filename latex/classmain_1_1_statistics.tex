@@ -1,0 +1,319 @@
+\doxysection{main.\+Statistics Class Reference}
+\hypertarget{classmain_1_1_statistics}{}\label{classmain_1_1_statistics}\index{main.Statistics@{main.Statistics}}
+
+
+A class for performing descriptive statistics on numerical datasets.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmain_1_1_statistics_abd716c759207756682e56922eb63085c}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classmain_1_1_statistics_a2cd7377fbde27eda5aa13970b7d08e23}{data}})
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{classmain_1_1_statistics}{Statistics} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmain_1_1_statistics_a0fe75d0077a6aa7133e8875933c2366d}{mean}} (self)
+\begin{DoxyCompactList}\small\item\em Computes the arithmetic mean. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmain_1_1_statistics_a10a1521c71097bcc76a5da076f1c026c}{median}} (self)
+\begin{DoxyCompactList}\small\item\em Computes the median of the dataset. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmain_1_1_statistics_aba7240b2d87d891828b5e79c9b3d10c9}{mode}} (self)
+\begin{DoxyCompactList}\small\item\em Computes the statistical mode. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmain_1_1_statistics_a74ab67d77159643ab7100c7a8a719d82}{variance}} (self, sample=True)
+\begin{DoxyCompactList}\small\item\em Computes the statistical variance. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmain_1_1_statistics_ad7652dd512850a1163d5d8a480394114}{std\+\_\+deviation}} (self, sample=True)
+\begin{DoxyCompactList}\small\item\em Computes the standard deviation of the dataset. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmain_1_1_statistics_aca3125a8d834ecec9d87b82f00460d6f}{summary}} (self)
+\begin{DoxyCompactList}\small\item\em Produces a summary of statistical metrics. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmain_1_1_statistics_a2cd7377fbde27eda5aa13970b7d08e23}{data}} = self.\+\_\+validate\+\_\+data(data)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmain_1_1_statistics_ac88f657c0c36d3f425e5c9403f6cdfe6}{\+\_\+validate\+\_\+data}} (self, \mbox{\hyperlink{classmain_1_1_statistics_a2cd7377fbde27eda5aa13970b7d08e23}{data}})
+\begin{DoxyCompactList}\small\item\em Validates the raw input data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class for performing descriptive statistics on numerical datasets. 
+
+This class provides methods to compute measures of central tendency (mean, median, mode) and measures of statistical variability (variance, standard deviation). It validates the input data before applying mathematical operations.
+
+\begin{DoxyParagraph}{Example usage\+:}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{stats\ =\ Statistics([1,\ 2,\ 3])}
+\DoxyCodeLine{print(stats.mean())}
+
+\end{DoxyCode}
+ 
+\end{DoxyParagraph}
+
+
+\label{doc-constructors}
+\Hypertarget{classmain_1_1_statistics_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classmain_1_1_statistics_abd716c759207756682e56922eb63085c}\index{main.Statistics@{main.Statistics}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!main.Statistics@{main.Statistics}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily \label{classmain_1_1_statistics_abd716c759207756682e56922eb63085c} 
+main.\+Statistics.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{data}{}\end{DoxyParamCaption})}
+
+
+
+Constructor for the \doxylink{classmain_1_1_statistics}{Statistics} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & A list of integer or floating-\/point numbers. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Type\+Error} & If data is not a list or contains invalid elements. \\
+\hline
+{\em Value\+Error} & If the list is empty.\\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyNote}{Note}
+Validation is automatically performed via the private method {\ttfamily \doxylink{classmain_1_1_statistics_ac88f657c0c36d3f425e5c9403f6cdfe6}{\+\_\+validate\+\_\+data()}}. 
+\end{DoxyNote}
+
+
+\label{doc-func-members}
+\Hypertarget{classmain_1_1_statistics_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classmain_1_1_statistics_ac88f657c0c36d3f425e5c9403f6cdfe6}\index{main.Statistics@{main.Statistics}!\_validate\_data@{\_validate\_data}}
+\index{\_validate\_data@{\_validate\_data}!main.Statistics@{main.Statistics}}
+\doxysubsubsection{\texorpdfstring{\_validate\_data()}{\_validate\_data()}}
+{\footnotesize\ttfamily \label{classmain_1_1_statistics_ac88f657c0c36d3f425e5c9403f6cdfe6} 
+main.\+Statistics.\+\_\+validate\+\_\+data (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Validates the raw input data. 
+
+This method ensures the provided dataset is suitable for all statistical operations performed by the class. It checks for correct type, non-\/emptiness, and ensures that all elements are numeric.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The input dataset to validate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A validated list of numbers. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Type\+Error} & If data is not a list or contains non-\/numeric elements. \\
+\hline
+{\em Value\+Error} & If data is an empty list. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classmain_1_1_statistics_a0fe75d0077a6aa7133e8875933c2366d}\index{main.Statistics@{main.Statistics}!mean@{mean}}
+\index{mean@{mean}!main.Statistics@{main.Statistics}}
+\doxysubsubsection{\texorpdfstring{mean()}{mean()}}
+{\footnotesize\ttfamily \label{classmain_1_1_statistics_a0fe75d0077a6aa7133e8875933c2366d} 
+main.\+Statistics.\+mean (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Computes the arithmetic mean. 
+
+The mean is determined by summing all values and dividing the result by the number of elements in the dataset.
+
+\begin{DoxyReturn}{Returns}
+The arithmetic mean (float).
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Example\+:}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{stats\ =\ Statistics([1,\ 2,\ 3])}
+\DoxyCodeLine{result\ =\ stats.mean()\ }
+\DoxyCodeLine{\textcolor{comment}{\#\ result\ is\ 2.0}}
+
+\end{DoxyCode}
+ 
+\end{DoxyParagraph}
+\Hypertarget{classmain_1_1_statistics_a10a1521c71097bcc76a5da076f1c026c}\index{main.Statistics@{main.Statistics}!median@{median}}
+\index{median@{median}!main.Statistics@{main.Statistics}}
+\doxysubsubsection{\texorpdfstring{median()}{median()}}
+{\footnotesize\ttfamily \label{classmain_1_1_statistics_a10a1521c71097bcc76a5da076f1c026c} 
+main.\+Statistics.\+median (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Computes the median of the dataset. 
+
+If the number of elements is odd, the middle number is returned. If the number is even, the median is the average of the two central numbers.
+
+\begin{DoxyReturn}{Returns}
+The median value.
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Example\+:}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{\#\ Odd\ number\ of\ elements}}
+\DoxyCodeLine{Statistics([1,\ 3,\ 5]).median()\ }
+\DoxyCodeLine{\textcolor{comment}{\#\ Returns\ 3}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{\#\ Even\ number\ of\ elements}}
+\DoxyCodeLine{Statistics([1,\ 3,\ 5,\ 7]).median()\ }
+\DoxyCodeLine{\textcolor{comment}{\#\ Returns\ 4.0}}
+
+\end{DoxyCode}
+ 
+\end{DoxyParagraph}
+\Hypertarget{classmain_1_1_statistics_aba7240b2d87d891828b5e79c9b3d10c9}\index{main.Statistics@{main.Statistics}!mode@{mode}}
+\index{mode@{mode}!main.Statistics@{main.Statistics}}
+\doxysubsubsection{\texorpdfstring{mode()}{mode()}}
+{\footnotesize\ttfamily \label{classmain_1_1_statistics_aba7240b2d87d891828b5e79c9b3d10c9} 
+main.\+Statistics.\+mode (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Computes the statistical mode. 
+
+The mode is the most frequently occurring value in the dataset.
+\begin{DoxyItemize}
+\item If a single value is most frequent, that value is returned.
+\item If multiple values share the same highest frequency, a list is returned.
+\item If all values appear only once, the method returns None.
+\end{DoxyItemize}
+
+\begin{DoxyReturn}{Returns}
+int \texorpdfstring{$\vert$}{|} float \texorpdfstring{$\vert$}{|} list \texorpdfstring{$\vert$}{|} None The mode or list of modes.
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Example\+:}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{\#\ Single\ mode}}
+\DoxyCodeLine{Statistics([1,\ 2,\ 2,\ 3]).mode()\ \textcolor{comment}{\#\ Returns\ 2}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{\#\ Multiple\ modes}}
+\DoxyCodeLine{Statistics([1,\ 1,\ 2,\ 2]).mode()\ \textcolor{comment}{\#\ Returns\ [1,\ 2]}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{\#\ No\ mode\ (all\ unique)}}
+\DoxyCodeLine{Statistics([1,\ 2,\ 3]).mode()\ \ \ \ \textcolor{comment}{\#\ Returns\ None}}
+
+\end{DoxyCode}
+ 
+\end{DoxyParagraph}
+\Hypertarget{classmain_1_1_statistics_ad7652dd512850a1163d5d8a480394114}\index{main.Statistics@{main.Statistics}!std\_deviation@{std\_deviation}}
+\index{std\_deviation@{std\_deviation}!main.Statistics@{main.Statistics}}
+\doxysubsubsection{\texorpdfstring{std\_deviation()}{std\_deviation()}}
+{\footnotesize\ttfamily \label{classmain_1_1_statistics_ad7652dd512850a1163d5d8a480394114} 
+main.\+Statistics.\+std\+\_\+deviation (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{sample}{ = {\ttfamily True}}\end{DoxyParamCaption})}
+
+
+
+Computes the standard deviation of the dataset. 
+
+Standard deviation is the square root of variance.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sample} & Boolean specifying sample or population variant. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The standard deviation (float).
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Example\+:}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{stats\ =\ Statistics([2,\ 4,\ 4,\ 4,\ 5,\ 5,\ 7,\ 9])}
+\DoxyCodeLine{stats.std\_deviation()\ \textcolor{comment}{\#\ Returns\ 2.138...}}
+
+\end{DoxyCode}
+ 
+\end{DoxyParagraph}
+\Hypertarget{classmain_1_1_statistics_aca3125a8d834ecec9d87b82f00460d6f}\index{main.Statistics@{main.Statistics}!summary@{summary}}
+\index{summary@{summary}!main.Statistics@{main.Statistics}}
+\doxysubsubsection{\texorpdfstring{summary()}{summary()}}
+{\footnotesize\ttfamily \label{classmain_1_1_statistics_aca3125a8d834ecec9d87b82f00460d6f} 
+main.\+Statistics.\+summary (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Produces a summary of statistical metrics. 
+
+\begin{DoxyReturn}{Returns}
+A dictionary with keys\+: mean, median, mode, variance, std\+\_\+dev.
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Example\+:}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{stats\ =\ Statistics([1,\ 2,\ 2,\ 3])}
+\DoxyCodeLine{stats.summary()}
+\DoxyCodeLine{\textcolor{comment}{\#\ Returns:}}
+\DoxyCodeLine{\textcolor{comment}{\#\ \{}}
+\DoxyCodeLine{\textcolor{comment}{\#\ \ \ \ \ 'mean':\ 2.0,\ }}
+\DoxyCodeLine{\textcolor{comment}{\#\ \ \ \ \ 'median':\ 2,\ }}
+\DoxyCodeLine{\textcolor{comment}{\#\ \ \ \ \ 'mode':\ 2,\ }}
+\DoxyCodeLine{\textcolor{comment}{\#\ \ \ \ \ 'variance':\ 0.667,\ }}
+\DoxyCodeLine{\textcolor{comment}{\#\ \ \ \ \ 'std\_dev':\ 0.816}}
+\DoxyCodeLine{\textcolor{comment}{\#\ \}}}
+
+\end{DoxyCode}
+ 
+\end{DoxyParagraph}
+\Hypertarget{classmain_1_1_statistics_a74ab67d77159643ab7100c7a8a719d82}\index{main.Statistics@{main.Statistics}!variance@{variance}}
+\index{variance@{variance}!main.Statistics@{main.Statistics}}
+\doxysubsubsection{\texorpdfstring{variance()}{variance()}}
+{\footnotesize\ttfamily \label{classmain_1_1_statistics_a74ab67d77159643ab7100c7a8a719d82} 
+main.\+Statistics.\+variance (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{sample}{ = {\ttfamily True}}\end{DoxyParamCaption})}
+
+
+
+Computes the statistical variance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sample} & If True, computes {\bfseries{sample variance}} (divisor N-\/1). If False, computes {\bfseries{population variance}} (divisor N). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The variance (float). 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Value\+Error} & If sample variance is requested for a dataset with fewer than 2 elements.\\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyNote}{Note}
+Variance measures the average squared deviation from the mean.
+\end{DoxyNote}
+\begin{DoxyParagraph}{Example\+:}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{stats\ =\ Statistics([2,\ 4,\ 4,\ 4,\ 5,\ 5,\ 7,\ 9])}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{\#\ Sample\ variance\ (default)}}
+\DoxyCodeLine{stats.variance()\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Returns\ 4.571...}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{\#\ Population\ variance}}
+\DoxyCodeLine{stats.variance(sample=\textcolor{keyword}{False})\ \textcolor{comment}{\#\ Returns\ 4.0}}
+
+\end{DoxyCode}
+ 
+\end{DoxyParagraph}
+
+
+\label{doc-variable-members}
+\Hypertarget{classmain_1_1_statistics_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classmain_1_1_statistics_a2cd7377fbde27eda5aa13970b7d08e23}\index{main.Statistics@{main.Statistics}!data@{data}}
+\index{data@{data}!main.Statistics@{main.Statistics}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily \label{classmain_1_1_statistics_a2cd7377fbde27eda5aa13970b7d08e23} 
+main.\+Statistics.\+data = self.\+\_\+validate\+\_\+data(data)}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{main_8py}{main.\+py}}\end{DoxyCompactItemize}
