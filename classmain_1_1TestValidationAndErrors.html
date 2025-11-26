@@ -109,14 +109,19 @@ Inheritance diagram for main.TestValidationAndErrors:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a423cb15dd8050cc205fd59616ba45a38" id="r_a423cb15dd8050cc205fd59616ba45a38"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmain_1_1TestValidationAndErrors.html#a423cb15dd8050cc205fd59616ba45a38">test_empty_list</a> (self)</td></tr>
+<tr class="memdesc:a423cb15dd8050cc205fd59616ba45a38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifies constructing Statistics with an empty list raises ValueError.  <br /></td></tr>
 <tr class="separator:a423cb15dd8050cc205fd59616ba45a38"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca94c814437525c7459baa678d32f3bf" id="r_aca94c814437525c7459baa678d32f3bf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmain_1_1TestValidationAndErrors.html#aca94c814437525c7459baa678d32f3bf">test_non_numeric</a> (self)</td></tr>
+<tr class="memdesc:aca94c814437525c7459baa678d32f3bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifies non-numeric elements cause a TypeError.  <br /></td></tr>
 <tr class="separator:aca94c814437525c7459baa678d32f3bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a380869ce33d5c979e3e2f39a73db8502" id="r_a380869ce33d5c979e3e2f39a73db8502"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmain_1_1TestValidationAndErrors.html#a380869ce33d5c979e3e2f39a73db8502">test_non_list_input</a> (self)</td></tr>
+<tr class="memdesc:a380869ce33d5c979e3e2f39a73db8502"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifies non-list inputs raise a TypeError.  <br /></td></tr>
 <tr class="separator:a380869ce33d5c979e3e2f39a73db8502"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7f6c0a7ff438e144e6b8938d91831f7f" id="r_a7f6c0a7ff438e144e6b8938d91831f7f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmain_1_1TestValidationAndErrors.html#a7f6c0a7ff438e144e6b8938d91831f7f">test_none_input</a> (self)</td></tr>
+<tr class="memdesc:a7f6c0a7ff438e144e6b8938d91831f7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifies passing None as data raises TypeError.  <br /></td></tr>
 <tr class="separator:a7f6c0a7ff438e144e6b8938d91831f7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae7896e2426076a5cd7041de1a7d76e50" id="r_ae7896e2426076a5cd7041de1a7d76e50"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmain_1_1TestValidationAndErrors.html#ae7896e2426076a5cd7041de1a7d76e50">test_nested_list_input</a> (self)</td></tr>
+<tr class="memdesc:ae7896e2426076a5cd7041de1a7d76e50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifies nested lists are rejected as invalid elements.  <br /></td></tr>
 <tr class="separator:ae7896e2426076a5cd7041de1a7d76e50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -139,6 +144,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Verifies constructing Statistics with an empty list raises ValueError. </p>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000026">Test:</a></b></dt><dd>Expected: ValueError on empty dataset </dd></dl>
+
 </div>
 </div>
 <a id="ae7896e2426076a5cd7041de1a7d76e50" name="ae7896e2426076a5cd7041de1a7d76e50"></a>
@@ -156,6 +164,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Verifies nested lists are rejected as invalid elements. </p>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000030">Test:</a></b></dt><dd>Expected: TypeError for nested list elements </dd></dl>
 
 </div>
 </div>
@@ -175,6 +186,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Verifies non-list inputs raise a TypeError. </p>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000028">Test:</a></b></dt><dd>Expected: TypeError when input is not a list </dd></dl>
+
 </div>
 </div>
 <a id="aca94c814437525c7459baa678d32f3bf" name="aca94c814437525c7459baa678d32f3bf"></a>
@@ -193,6 +207,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Verifies non-numeric elements cause a TypeError. </p>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000027">Test:</a></b></dt><dd>Expected: TypeError when list contains non-numeric types </dd></dl>
+
 </div>
 </div>
 <a id="a7f6c0a7ff438e144e6b8938d91831f7f" name="a7f6c0a7ff438e144e6b8938d91831f7f"></a>
@@ -210,6 +227,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Verifies passing None as data raises TypeError. </p>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000029">Test:</a></b></dt><dd>Expected: TypeError for None input </dd></dl>
 
 </div>
 </div>

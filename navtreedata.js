@@ -30,6 +30,7 @@ var NAVTREE =
       [ "Documentation", "md_README.html#autotoc_md2", null ],
       [ "Prerequisites", "md_README.html#autotoc_md3", null ]
     ] ],
+    [ "Test List", "test.html", null ],
     [ "Packages", "namespaces.html", [
       [ "Package List", "namespaces.html", "namespaces_dup" ],
       [ "Package Members", "namespacemembers.html", [
